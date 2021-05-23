@@ -23,7 +23,7 @@ func (dl DataListener) Echo(w http.ResponseWriter, req *http.Request) {
 }
 
 func (dl DataListener) Default(w http.ResponseWriter, req *http.Request) {
-	http.ServeFile(w, req, "index.html")
+	http.ServeFile(w, req, "site/index.html")
 }
 
 func ZeroListener() {

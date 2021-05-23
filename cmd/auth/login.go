@@ -20,13 +20,13 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	cTime := time.Now()
 	fmt.Printf("%s method:%s\n", cTime.Format("2006.01.02 15:04:05"), r.Method) //get request method
 	if r.Method == "GET" {
-		t, _ := template.ParseFiles("site/index.html")
+		t, _ := template.ParseFiles("site/login.html")
 		t.Execute(w, nil)
 	} else {
 		r.ParseForm()
 		if checkCreds(r) {
 			fmt.Println("username entered:", r.Form["username"])
-			fmt.Println("password submitted:", r.Form["password"])
+			fmt.Println("password entered:", r.Form["password"])
 		} else {
 			f, _ := template.ParseFiles("site/block.html")
 			f.Execute(w, nil)
