@@ -11,7 +11,7 @@ import (
 func Login(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("method:", r.Method) //get request method
 	if r.Method == "GET" {
-		t, _ := template.ParseFiles("index.html")
+		t, _ := template.ParseFiles("site/index.html")
 		t.Execute(w, nil)
 	} else {
 		r.ParseForm()
@@ -19,7 +19,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 			fmt.Println("username entered:", r.Form["username"])
 			fmt.Println("password submitted:", r.Form["password"])
 		} else {
-			f, _ := template.ParseFiles("block.html")
+			f, _ := template.ParseFiles("site/block.html")
 			f.Execute(w, nil)
 		}
 	}
