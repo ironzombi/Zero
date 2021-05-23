@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"text/template"
+	login "zero/cmd/auth"
 )
 
 type DataListener struct {
@@ -43,7 +44,8 @@ func ZeroListener() {
 	http.HandleFunc("/add", dl.Input)
 	http.HandleFunc("/echo", dl.Echo)
 	http.HandleFunc("/template", dl.Template)
+	http.HandleFunc("/login", login.Login)
 
-	log.Fatal(http.ListenAndServe("192.168.1.117:8181", nil))
-	fmt.Println("check good")
+	log.Fatal(http.ListenAndServe("0.0.0.0:8181", nil))
+
 }
