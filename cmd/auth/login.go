@@ -64,7 +64,7 @@ func checkCreds(creds *http.Request) bool {
 		fmt.Println("Password required")
 		return false
 	} else {
-		fmt.Println("good boy")
+		fmt.Println("authenticated")
 		return true
 	}
 

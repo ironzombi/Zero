@@ -19,7 +19,7 @@ func (dl DataListener) Input(w http.ResponseWriter, req *http.Request) {
 }
 
 func (dl DataListener) Echo(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, "this worked,  %s", req.URL)
+	fmt.Fprintf(w, "repeats,  %s", req.URL)
 }
 
 func (dl DataListener) Default(w http.ResponseWriter, req *http.Request) {
