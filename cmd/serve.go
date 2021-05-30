@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	login "zero/cmd/auth"
+	plot "zero/cmd/plot"
 )
 
 type DataListener struct {
@@ -34,7 +35,7 @@ func ZeroListener() {
 	http.HandleFunc("/template", login.Render)
 	http.HandleFunc("/login", login.Login)
 	http.HandleFunc("/info", login.ListServers)
-
+	http.HandleFunc("/plot", plot.Plot)
 	log.Fatal(http.ListenAndServe("0.0.0.0:8181", nil))
 
 }
