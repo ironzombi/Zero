@@ -1,5 +1,8 @@
 package main
 
+/* yeah may need to rename the dir
+ *
+ * mip                          */
 import (
 	serve "zero/cmd"
 )
