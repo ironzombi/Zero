@@ -6,6 +6,7 @@ import (
 	"net/http"
 )
 
+// download url as a string
 func FetchPage(url string) {
 	resp, err := http.Get(url)
 	if err != nil {
